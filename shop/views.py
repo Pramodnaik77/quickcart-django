@@ -7,6 +7,17 @@ from .models import *
 from django.contrib.auth.decorators import login_required
 from datetime import date
 
+from django.contrib.auth.models import User
+from django.http import HttpResponse
+
+def create_superuser_if_not_exists():
+    if not User.objects.filter(username='pramod').exists():
+        User.objects.create_superuser('pramod', 'pramod@example.com', 'SugarGravePrime@77')
+        return HttpResponse("Superuser created.")
+    return HttpResponse("Superuser already exists.")
+
+# Call the function to ensure superuser is created
+create_superuser_if_not_exists()
 
 def index(request):
     allprods = []
