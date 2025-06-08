@@ -10,14 +10,17 @@ from datetime import date
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 
+
 def create_superuser_if_not_exists():
-    if not User.objects.filter(username='pramod').exists():
-        User.objects.create_superuser('pramod', 'pramod@example.com', 'SugarGravePrime@77')
+    if not User.objects.filter(username='admin').exists():
+        User.objects.create_superuser('admin', 'admin@example.com', 'your_secure_password')
         return HttpResponse("Superuser created.")
     return HttpResponse("Superuser already exists.")
 
-# Call the function to ensure superuser is created
-create_superuser_if_not_exists()
+def createadmin(request):
+    create_superuser_if_not_exists()
+    return HttpResponse("Superuser creation triggered.")
+
 
 def index(request):
     allprods = []
