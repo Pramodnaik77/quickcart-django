@@ -33,9 +33,9 @@ if ENVIRONMENT == 'development':
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'quickcart-django-qkup.onrender.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'quickcart-django-31fx.onrender.com/']
 
-CSRF_TRUSTED_ORIGINS = [ 'https://quickcart-django-qkup.onrender.com' ]
+CSRF_TRUSTED_ORIGINS = [ 'https://quickcart-django-31fx.onrender.com/' ]
 # Application definition
 
 INSTALLED_APPS = [
