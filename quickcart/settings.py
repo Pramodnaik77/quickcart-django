@@ -136,7 +136,7 @@ MEDIA_URL = '/shop/static/shop/'
 if ENVIRONMENT == 'development':
     MEDIA_ROOT = os.path.join(BASE_DIR, 'shop/static/shop/')
 else:
-    DEFAULT_FILE_STORAGE = 'clodinary_storage.storage.MediaCloudinaryStorage'
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
     CLOUDINARY_STORAGE = {
         "CLOUDINARY_URL": env('CLOUDINARY_URL', default=''),
     }
